@@ -15,6 +15,7 @@ enum Operation {WITHDRAW=1, DEPOSIT, QUIT};
 
 // Function prototypes
 int getOperationChoice();
+int getMetalChoice();
 
 int main() {
 
@@ -102,7 +103,15 @@ int main() {
 }
 
 
-int getOperationChoice() {
+int getMetalChoice()
+{
+  int choice;
+  println("Please choose which metal you want to work with:\n 1. Gold\n 2. Silver\n 3. Copper");
+  print("Metal Choice: ");
+  cin >> choice;
+  return choice;
+}
+
 
   int choice;
   cout << "Choose what you want to do: " << endl
