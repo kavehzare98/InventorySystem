@@ -1,6 +1,6 @@
+#include <print>
 #include <iostream>
-import <print>;
-using std::cout, std::endl, std::cin;
+using std::println, std::cin, std::print;
 
 const int SIZE = 20;
 
