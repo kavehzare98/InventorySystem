@@ -90,9 +90,7 @@ int main()
       break;
   }
 
-  print("FINAL BALANCE: ");
-  println("{}", balance);
-  println("Goodbye");
+  println("FINAL BALANCE: {}\nGoodbye", balance);
 
   return 0;
 }
