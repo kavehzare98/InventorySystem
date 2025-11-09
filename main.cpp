@@ -22,8 +22,12 @@ int main() {
   Inventory inv;
   int metalChoice;
   int balance;
-  cout << "Metal Choice: ";
-  cin >> metalChoice;
+  int operationChoice;
+  int exchangeAmount;
+
+  println("Welcome to my shitty inventory system:");
+
+  metalChoice = getMetalChoice();
 
   print("Here is your current balance: ");
 
@@ -44,7 +48,7 @@ int main() {
 
   println("{0}",balance);
 
-  int operationChoice = getOperationChoice();
+  operationChoice = getOperationChoice();
 
   print("What's the amount: ");
   cin >> exchangeAmount;
