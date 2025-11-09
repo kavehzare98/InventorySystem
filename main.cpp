@@ -34,7 +34,7 @@ int main() {
   cout << "Metal Choice: ";
   cin >> metalChoice;
 
-  cout << "Here is your current balance: ";
+  print("Here is your current balance: ");
 
   switch (metalChoice) {
     case GOLD:
@@ -47,16 +47,15 @@ int main() {
       balance = inv.copperBalance;
       break;
     default:
-      cout << "INVALID CHOICE ERROR!" << endl;
+      println("INVALID CHOICE ERROR!");
       break;
   }
 
-  cout << balance << endl;
+  println("{0}",balance);
 
   int operationChoice = getOperationChoice();
 
-  int exchangeAmount;
-  cout << "What's the amount: ";
+  print("What's the amount: ");
   cin >> exchangeAmount;
 
   switch (operationChoice)
@@ -92,12 +91,13 @@ int main() {
     case QUIT:
       break;
     default:
-      cout << "INVALID OPERATION ERROR!" << endl;
+      println("INVALID OPERATION ERROR!");
       break;
   }
 
-  cout << "Here is your final balance: " << balance << endl;
-  cout << "Goodbye" << endl;
+  print("FINAL BALANCE: ");
+  println("{}", balance);
+  println("Goodbye");
 
   return 0;
 }
@@ -113,12 +113,10 @@ int getMetalChoice()
 }
 
 
+int getOperationChoice()
+{
   int choice;
-  cout << "Choose what you want to do: " << endl
-       << "  1. Withdraw" << endl
-       << "  2. Deposit"  << endl
-       << "  3. Quit"     << endl
-       << "Your choice: ";
+  print("Choose what you want to do:\n  1. Withdraw\n  2. Deposit\n  3. Quit\nYour choice: ");
   cin >> choice;
   return choice;
 }
