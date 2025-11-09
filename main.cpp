@@ -17,8 +17,8 @@ enum Operation {WITHDRAW=1, DEPOSIT, QUIT};
 int getOperationChoice();
 int getMetalChoice();
 
-int main() {
-
+int main()
+{
   Inventory inv;
   int metalChoice;
   int balance;
