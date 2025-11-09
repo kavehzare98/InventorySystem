@@ -20,15 +20,6 @@ int getMetalChoice();
 int main() {
 
   Inventory inv;
-
-  println("Welcome to my crib");
-  cout << "Welcome to my shitty inventory system:" << endl;
-  cout << "Please choose which metal you want to work with: " << endl;
-
-  cout << "1. Gold" << endl
-       << "2. Silver" << endl
-       << "3. Copper" << endl << endl;
-
   int metalChoice;
   int balance;
   cout << "Metal Choice: ";
