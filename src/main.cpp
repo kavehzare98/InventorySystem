@@ -107,4 +107,4 @@ void showInventoryView(Inventory &inv) {
   println("|---------||--------------------|");
   println("|  Copper ||\t{}\t\t|", inv.getCopperBalance());
   println("|=========||====================|\n");
-}
+} // end of showInventoryView()
