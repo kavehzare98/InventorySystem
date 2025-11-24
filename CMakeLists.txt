@@ -10,7 +10,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
 # ---------- core library ----------
 add_library(inventory_core
@@ -40,7 +40,7 @@ target_include_directories(inventory_gui
 target_link_libraries(inventory_gui
   PRIVATE
     inventory_core
-    Qt6::Widgets
+    Qt5::Widgets
 )
 
 # ---------- CLI executable (old main, optional) ----------

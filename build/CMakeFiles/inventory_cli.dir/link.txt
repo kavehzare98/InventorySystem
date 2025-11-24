@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/inventory_cli.dir/link.d CMakeFiles/inventory_cli.dir/inventory_cli_autogen/mocs_compilation.cpp.o CMakeFiles/inventory_cli.dir/cli/main.cpp.o -o inventory_cli  libinventory_core.a
