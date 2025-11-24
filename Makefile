@@ -3,11 +3,13 @@
 COMPILER         := g++
 COMPILER_VERSION := -std=c++23
 EXEC             := main
-BUILD_DIR        := ./executables
-SRC_DIR          := ./src
+SRC_DIR          := src
+INC_DIR	         := include
+
+SRC_FILES 	 := $(wildcard $(SRC_DIR)/*.cpp)
 	
 all:
-	$(COMPILER) $(COMPILER_VERSION) $(SRC_DIR)/$(SRC_FILES) -o $(EXEC) 
+	$(COMPILER) $(COMPILER_VERSION) -I./$(INC_DIR) $(SRC_FILES) -o $(EXEC) 
 
 clean:
 	rm $(EXEC)
