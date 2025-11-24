@@ -1,52 +1,28 @@
 #include <iostream>
 #include <print>
+#include "Inventory.hpp"
 using std::println, std::cin, std::print;
-
-const int SIZE = 20;
-
-struct Inventory {
-  int goldBalance{10};
-  int silverBalance{15};
-  int copperBalance{3};
-};
-
-enum Metals { GOLD = 1, SILVER, COPPER };
-enum Operation { WITHDRAW = 1, DEPOSIT, QUIT };
 
 // Function prototypes
 int getOperationChoice();
 int getMetalChoice();
+void showBalance(int metalChoice, Inventory &inv);
 
 int main() {
-  Inventory inv;
+
+  const int START_AMT = 20;
   int metalChoice;
-  int balance;
   int operationChoice;
   int exchangeAmount;
 
-  println("Welcome to my shitty inventory system:");
+  Inventory inv = Inventory(START_AMT, START_AMT, START_AMT);
 
+  println("Welcome to Kaveh's inventory system:");
   metalChoice = getMetalChoice();
+  showBalance(metalChoice, inv);
 
-  print("Here is your current balance: ");
 
-  switch (metalChoice) {
-  case GOLD:
-    balance = inv.goldBalance;
-    break;
-  case SILVER:
-    balance = inv.silverBalance;
-    break;
-  case COPPER:
-    balance = inv.copperBalance;
-    break;
-  default:
-    println("INVALID CHOICE ERROR!");
-    break;
-  }
-
-  println("{0}", balance);
-
+/*
   operationChoice = getOperationChoice();
 
   print("What's the amount: ");
@@ -87,7 +63,7 @@ int main() {
   }
 
   println("FINAL BALANCE: {}\nGoodbye", balance);
-
+*/
   return 0;
 }
 
@@ -98,7 +74,7 @@ int getMetalChoice() {
   print("Metal Choice: ");
   cin >> choice;
   return choice;
-}
+} // end of getMetalChoice()
 
 int getOperationChoice() {
   int choice;
@@ -106,4 +82,29 @@ int getOperationChoice() {
         "Quit\nYour choice: ");
   cin >> choice;
   return choice;
-}
+} // end of getOperationChoice()
+
+void showBalance(int metalChoice, Inventory &inv) {
+  bool validChoice = true;
+  int balance;
+  switch (metalChoice) {
+  case GOLD:
+    balance = inv.getGoldBalance();
+    break;
+  case SILVER:
+    balance = inv.getSilverBalance();
+    break;
+  case COPPER:
+    balance = inv.getCopperBalance();
+    break;
+  default: {
+    validChoice = false;
+    println("INVALID CHOICE ERROR!");
+    break;
+           }
+  }
+  if (validChoice) {
+    print("Here is your current balance: ");
+    println("{0}", balance);
+  }
+} // end of showBalance()
