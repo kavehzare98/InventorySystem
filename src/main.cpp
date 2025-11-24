@@ -21,49 +21,22 @@ int main() {
   metalChoice = getMetalChoice();
   showBalance(metalChoice, inv);
 
-
-/*
   operationChoice = getOperationChoice();
 
   print("What's the amount: ");
   cin >> exchangeAmount;
 
-  switch (operationChoice) {
-  case WITHDRAW: {
-    if (metalChoice == GOLD) {
-      inv.goldBalance -= exchangeAmount;
-      balance = inv.goldBalance;
-    } else if (metalChoice == SILVER) {
-      inv.silverBalance -= exchangeAmount;
-      balance = inv.silverBalance;
-    } else if (metalChoice == COPPER) {
-      inv.copperBalance -= exchangeAmount;
-      balance = inv.copperBalance;
-    }
-    break;
-  }
-  case DEPOSIT: {
-    if (metalChoice == GOLD) {
-      inv.goldBalance += exchangeAmount;
-      balance = inv.goldBalance;
-    } else if (metalChoice == SILVER) {
-      inv.silverBalance += exchangeAmount;
-      balance = inv.silverBalance;
-    } else if (metalChoice == COPPER) {
-      inv.copperBalance += exchangeAmount;
-      balance = inv.copperBalance;
-    }
-    break;
-  }
-  case QUIT:
-    break;
-  default:
-    println("INVALID OPERATION ERROR!");
-    break;
+  int balance;
+  if (operationChoice == WITHDRAW) {
+    balance = inv.withdraw(metalChoice, exchangeAmount);
+    println("FINAL BALANCE: {}\nGoodbye", balance);
+  } else if (operationChoice == DEPOSIT) {
+    balance = inv.deposit(metalChoice, exchangeAmount);
+    println("FINAL BALANCE: {}\nGoodbye", balance);
+  } else {
+    println("Chose QUIT!");
   }
 
-  println("FINAL BALANCE: {}\nGoodbye", balance);
-*/
   return 0;
 }
 
