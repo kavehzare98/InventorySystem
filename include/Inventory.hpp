@@ -3,7 +3,7 @@
 
 #define MAX_CAPACITY 100
 
-enum Metals { GOLD = 1, SILVER, COPPER };
+enum Metals { GOLD = 1, SILVER, COPPER, NO_METAL };
 enum Operation { WITHDRAW = 1, DEPOSIT, QUIT };
 
 class Inventory {

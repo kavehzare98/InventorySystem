@@ -1,12 +1,13 @@
+#include "Inventory.hpp"
 #include <iostream>
 #include <print>
-#include "Inventory.hpp"
 using std::println, std::cin, std::print;
 
 // Function prototypes
-int getOperationChoice();
 int getMetalChoice();
+int getOperationChoice();
 void showBalance(int metalChoice, Inventory &inv);
+void showInventoryView(Inventory &inv);
 
 int main() {
 
@@ -18,23 +19,37 @@ int main() {
   Inventory inv = Inventory(START_AMT, START_AMT, START_AMT);
 
   println("Welcome to Kaveh's inventory system:");
-  metalChoice = getMetalChoice();
-  showBalance(metalChoice, inv);
 
-  operationChoice = getOperationChoice();
+  while (true) {
+    showInventoryView(inv);
 
-  print("What's the amount: ");
-  cin >> exchangeAmount;
+    metalChoice = getMetalChoice();
+    if (metalChoice == NO_METAL) {
+      break;
+    }
 
-  int balance;
-  if (operationChoice == WITHDRAW) {
-    balance = inv.withdraw(metalChoice, exchangeAmount);
-    println("FINAL BALANCE: {}\nGoodbye", balance);
-  } else if (operationChoice == DEPOSIT) {
-    balance = inv.deposit(metalChoice, exchangeAmount);
-    println("FINAL BALANCE: {}\nGoodbye", balance);
-  } else {
-    println("Chose QUIT!");
+    showBalance(metalChoice, inv);
+
+    operationChoice = getOperationChoice();
+    if (operationChoice == QUIT) {
+      break;
+    }
+
+    print("What's the amount: ");
+    cin >> exchangeAmount;
+
+    int balance;
+
+    if (operationChoice == WITHDRAW) {
+      balance = inv.withdraw(metalChoice, exchangeAmount);
+    } else if (operationChoice == DEPOSIT) {
+      balance = inv.deposit(metalChoice, exchangeAmount);
+    }
+
+    if (balance != -1)
+      println("FINAL BALANCE: {}\n", balance);
+    else
+      println("INVALID OPERATION!");
   }
 
   return 0;
@@ -43,7 +58,7 @@ int main() {
 int getMetalChoice() {
   int choice;
   println("Please choose which metal you want to work with:\n 1. Gold\n 2. "
-          "Silver\n 3. Copper");
+          "Silver\n 3. Copper\n 4. Quit");
   print("Metal Choice: ");
   cin >> choice;
   return choice;
@@ -72,12 +87,24 @@ void showBalance(int metalChoice, Inventory &inv) {
     break;
   default: {
     validChoice = false;
-    println("INVALID CHOICE ERROR!");
+    println("INVALID CHOICE ERROR!\n");
     break;
-           }
   }
-  if (validChoice) {
-    print("Here is your current balance: ");
-    println("{0}", balance);
   }
+  if (validChoice)
+    println("Here is your current balance: {}", balance);
 } // end of showBalance()
+
+
+void showInventoryView(Inventory &inv) {
+
+  println("\n|=========||====================|");
+  println("|  Metal  ||  Current Amount    |");
+  println("|---------||--------------------|");
+  println("|  Gold   ||\t{}\t\t|", inv.getGoldBalance());
+  println("|---------||--------------------|");
+  println("|  Silver ||\t{}\t\t|", inv.getSilverBalance());
+  println("|---------||--------------------|");
+  println("|  Copper ||\t{}\t\t|", inv.getCopperBalance());
+  println("|=========||====================|\n");
+}
