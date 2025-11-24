@@ -1,4 +1,4 @@
-.PHONY: all clean build_version
+.PHONY: all clean 
 
 COMPILER         := g++
 COMPILER_VERSION := -std=c++23
