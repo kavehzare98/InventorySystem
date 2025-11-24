@@ -1,0 +1,11 @@
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_core.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_gui.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_cli.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/edit_cache.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/rebuild_cache.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_core_autogen_timestamp_deps.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_core_autogen.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_gui_autogen_timestamp_deps.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_gui_autogen.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_cli_autogen_timestamp_deps.dir
+/home/kavehzare/GitHub/InventorySystem/build/CMakeFiles/inventory_cli_autogen.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libinventory_core.a CMakeFiles/inventory_core.dir/inventory_core_autogen/mocs_compilation.cpp.o CMakeFiles/inventory_core.dir/core/Inventory.cpp.o
+/usr/bin/ranlib libinventory_core.a

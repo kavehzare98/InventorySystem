@@ -1,7 +1,7 @@
 #ifndef INVENTORY_HPP
 #define INVENTORY_HPP
 
-#define MAX_CAPACITY 100
+constexpr int MAX_CAPACITY = 1000;
 
 enum Metals { GOLD = 1, SILVER, COPPER, NO_METAL };
 enum Operation { WITHDRAW = 1, DEPOSIT, QUIT };
@@ -11,6 +11,7 @@ private:
   int m_goldBalance;
   int m_silverBalance;
   int m_copperBalance;
+  bool validateTransaction(int type, int amount);
 
 public:
   Inventory();
@@ -26,6 +27,5 @@ public:
 
   int withdraw(int metalType, int withdrawAmount); // returns the final balance
   int deposit(int metalType, int depositAmount); // returns the final balance
-  bool validateTransaction(int type, int amount);
 };
 #endif

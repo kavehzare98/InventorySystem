@@ -1,7 +1,6 @@
 #include "Inventory.hpp"
 #include <iostream>
-#include <print>
-using std::println, std::cin, std::print;
+using namespace std;
 
 // Function prototypes
 int getMetalChoice();
@@ -10,7 +9,6 @@ void showBalance(int metalChoice, Inventory &inv);
 void showInventoryView(Inventory &inv);
 
 int main() {
-
   const int START_AMT = 20;
   int metalChoice;
   int operationChoice;
@@ -18,7 +16,7 @@ int main() {
 
   Inventory inv = Inventory(START_AMT, START_AMT, START_AMT);
 
-  println("Welcome to Kaveh's inventory system:");
+  cout << "Welcome to Kaveh's inventory system:" << endl;
 
   while (true) {
     showInventoryView(inv);
@@ -35,10 +33,10 @@ int main() {
       break;
     }
 
-    print("What's the amount: ");
+    cout << "What's the amount: ";
     cin >> exchangeAmount;
 
-    int balance;
+    int balance = -1;
 
     if (operationChoice == WITHDRAW) {
       balance = inv.withdraw(metalChoice, exchangeAmount);
@@ -46,10 +44,11 @@ int main() {
       balance = inv.deposit(metalChoice, exchangeAmount);
     }
 
-    if (balance != -1)
-      println("FINAL BALANCE: {}\n", balance);
-    else
-      println("INVALID OPERATION!");
+    if (balance != -1) {
+      cout << "FINAL BALANCE: " << balance << endl;
+    } else {
+      cout << "INVALID OPERATION!" << endl;
+    }
   }
 
   return 0;
@@ -57,24 +56,33 @@ int main() {
 
 int getMetalChoice() {
   int choice;
-  println("Please choose which metal you want to work with:\n 1. Gold\n 2. "
-          "Silver\n 3. Copper\n 4. Quit");
-  print("Metal Choice: ");
+
+  cout << "Please choose which metal you want to work with:\n"
+       << "  1. Gold\n"
+       << "  2. Silver\n"
+       << "  3. Copper\n"
+       << "  4. Quit\n"
+       << "Metal Choice: ";
+
   cin >> choice;
   return choice;
 } // end of getMetalChoice()
 
 int getOperationChoice() {
   int choice;
-  print("Choose what you want to do:\n  1. Withdraw\n  2. Deposit\n  3. "
-        "Quit\nYour choice: ");
+  cout << "Choose what you want to do:\n"
+       << "  1. Withdraw\n"
+       << "  2. Deposit\n"
+       << "  3. Quit\n"
+       << "Your choice: ";
   cin >> choice;
   return choice;
 } // end of getOperationChoice()
 
 void showBalance(int metalChoice, Inventory &inv) {
   bool validChoice = true;
-  int balance;
+  int balance = -1;
+
   switch (metalChoice) {
   case GOLD:
     balance = inv.getGoldBalance();
@@ -85,26 +93,26 @@ void showBalance(int metalChoice, Inventory &inv) {
   case COPPER:
     balance = inv.getCopperBalance();
     break;
-  default: {
+  default:
     validChoice = false;
-    println("INVALID CHOICE ERROR!\n");
+    cout << "INVALID CHOICE ERROR!\n";
     break;
   }
+
+  if (validChoice) {
+    cout << "Here is your current balance: " << balance << endl;
   }
-  if (validChoice)
-    println("Here is your current balance: {}", balance);
 } // end of showBalance()
 
-
 void showInventoryView(Inventory &inv) {
+  cout << "\n|=========||====================|\n";
+  cout <<   "|  Metal  ||  Current Amount    |\n";
+  cout <<   "|---------||--------------------|\n";
+  cout <<   "|  Gold   ||\t"   << inv.getGoldBalance()   << "\t\t|\n";
+  cout <<   "|---------||--------------------|\n";
+  cout <<   "|  Silver ||\t" << inv.getSilverBalance() << "\t\t|\n";
+  cout <<   "|---------||--------------------|\n";
+  cout <<   "|  Copper ||\t" << inv.getCopperBalance() << "\t\t|\n";
+  cout <<   "|=========||====================|\n\n";
+}
 
-  println("\n|=========||====================|");
-  println("|  Metal  ||  Current Amount    |");
-  println("|---------||--------------------|");
-  println("|  Gold   ||\t{}\t\t|", inv.getGoldBalance());
-  println("|---------||--------------------|");
-  println("|  Silver ||\t{}\t\t|", inv.getSilverBalance());
-  println("|---------||--------------------|");
-  println("|  Copper ||\t{}\t\t|", inv.getCopperBalance());
-  println("|=========||====================|\n");
-} // end of showInventoryView()
