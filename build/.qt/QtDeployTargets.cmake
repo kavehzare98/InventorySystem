@@ -1,6 +1,0 @@
-set(__QT_DEPLOY_TARGET_inventory_core_FILE /home/kavehzare/GitHub/InventorySystem/build/libinventory_core.a)
-set(__QT_DEPLOY_TARGET_inventory_core_TYPE STATIC_LIBRARY)
-set(__QT_DEPLOY_TARGET_inventory_gui_FILE /home/kavehzare/GitHub/InventorySystem/build/inventory_gui)
-set(__QT_DEPLOY_TARGET_inventory_gui_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_inventory_cli_FILE /home/kavehzare/GitHub/InventorySystem/build/inventory_cli)
-set(__QT_DEPLOY_TARGET_inventory_cli_TYPE EXECUTABLE)

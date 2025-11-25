@@ -40,3 +40,8 @@ ui_*.h
 # Backup files
 *~
 
+# Qt Creator metadata
+.qt/
+*/.qt/
+build/.qt/
+build-*/.qt/
