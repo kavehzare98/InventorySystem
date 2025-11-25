@@ -2,10 +2,10 @@
 Inventory System application now supports CLI and GUI on Fedora & Ubuntu Linux.
 
 ## Command Line Interface (CLI)
-![Command Line Interface (CLI)](https://github.com/kavehzare98/InventorySystem/blob/main/cli.png)
+![Command Line Interface (CLI)](https://github.com/kavehzare98/InventorySystem/blob/main/assets/cli.png)
 
 ## Graphical User Interface (GUI)
-![Graphical User Interface (GUI)](https://github.com/kavehzare98/InventorySystem/blob/main/gui.png)
+![Graphical User Interface (GUI)](https://github.com/kavehzare98/InventorySystem/blob/main/assets/gui.png)
 
 ## Steps to Install
 ```bash
