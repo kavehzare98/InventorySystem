@@ -17,6 +17,7 @@ cd InventorySystem
 ```bash
 ./scripts/1_install_dependencies.sh
 ```
+#### 1.1 Input your password installation to complete successfully
 
 ### 2. Configure build directory
 ```bash
