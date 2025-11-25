@@ -9,7 +9,7 @@ Inventory System application now supports CLI and GUI on Fedora & Ubuntu Linux.
 
 ## Steps to Install
 ```bash
-git clone
+git clone <this repository>
 cd InventorySystem
 ```
 
